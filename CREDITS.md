@@ -1,9 +1,10 @@
 # Credits — Three Colors Voice Pack
 
-## Current audition path (MIDI / FluidSynth)
+## Current path (MIDI / FluidSynth)
 
-**Primary voice source for `audition_midi/`:** MuseScore General soundfont
-rendered with FluidSynth (expressive MIDI trombone and violin).
+**Primary voice source for `library/` and `audition_midi/`:** MuseScore
+General soundfont rendered with FluidSynth (expressive MIDI trombone
+and violin). The 144-clip placeholder pack is `library/`.
 
 ### MuseScore General (HQ / Full SF3)
 
@@ -14,7 +15,7 @@ rendered with FluidSynth (expressive MIDI trombone and violin).
   package copyright). Includes Fluid (R3) GM heritage (Frank Wen et al., MIT).
 - See: `/usr/share/doc/musescore-general-soundfont/copyright`
 
-Programs used in the MIDI audition:
+Programs used in the library and MIDI audition:
 
 - Muted Trombone — GM #59 / program change 58
 - Violin — GM #41 / program change 40
@@ -39,5 +40,7 @@ Additive-synth takes under `audition/` are also reference-only.
 
 ## Build scripts
 
-- `build_midi_audition.py` → `audition_midi/` (current)
+- `build_midi_library.py` → `library/` (current 144-clip pack)
+- `validate_library.py` → format / duration / uniqueness checks
+- `build_midi_audition.py` → `audition_midi/` (4-clip listen gate)
 - `build_orchestral_audition.py` → `audition_orchestral/` (prior Iowa grains)

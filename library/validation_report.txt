@@ -1,0 +1,16 @@
+=== Library validation ===
+Expected WAV: 144
+Found WAV:    144
+Missing WAV:  0
+Unexpected:   0
+Missing MIDI: 0
+Format fail (mono/44.1k/16-bit): 0
+Duration fail: 0
+Clipping:      0
+Byte-identical groups: 0
+v1/v2 corr fail (>0.985): 0
+v1/v2 corr warn (>0.92):  0
+v1/v2 corr min/mean/max: -0.159 / 0.004 / 0.200
+Duration range: 0.926s – 3.546s
+Peak range: -4.50 – -4.00 dBFS
+RESULT: PASS
