@@ -1,25 +1,35 @@
 # Three Colors of Madness — Voice Pack (WIP)
 
-Wordless instrumental speech in the Peanuts adult-voice register for *Three Colors of Madness*: musicians speaking through trombone (primary) and violin (alternate). No intelligible words.
+Wordless instrumental speech in the Peanuts adult-voice register for
+*Three Colors of Madness*: musicians speaking through trombone (primary)
+and violin (alternate). No intelligible words.
 
 ## Current status
 
-**Orchestral audition (pass/fail gate):** Iowa MIS real samples, not additive synth.
+**MIDI audition (user-chosen next gate):** expressive MIDI into MuseScore
+General Full via FluidSynth (proper notes / sample bank). Iowa MIS grain
+concat was rejected as still too synthetic/effect-like.
 
 | File | Style |
 |------|--------|
-| `audition_orchestral/trombone_bureaucratic_medium_v1.wav` | practiced official wording |
-| `audition_orchestral/trombone_dismissive_medium_v1.wav` | brushing aside |
-| `audition_orchestral/violin_cautious_medium_v1.wav` | carefully measured |
-| `audition_orchestral/violin_weary_medium_v1.wav` | tired trailing cadence |
+| `audition_midi/trombone_bureaucratic_medium_v1.wav` | practiced official wording |
+| `audition_midi/trombone_dismissive_medium_v1.wav` | brushing aside |
+| `audition_midi/violin_cautious_medium_v1.wav` | carefully measured |
+| `audition_midi/violin_weary_medium_v1.wav` | tired trailing cadence |
 
-Do **not** expand the full style/length library until these pass an “unmistakably orchestral” listen.
+Matching `.mid` files sit next to each WAV. Details: `audition_midi/README.md`.
 
-Earlier additive-synth takes live under `audition/` for reference only (rejected as too electronic).
+Do not expand the full style/length library until these pass an
+“unmistakably trombone/violin playing” listen.
+
+Prior packs kept for reference only:
+
+- `audition_orchestral/` — Iowa MIS grains (rejected this round)
+- `audition/` — additive synth (rejected earlier)
 
 ## Spec (target library)
 
-- Delivery styles: see project brief (neutral, bureaucratic, dismissive, …)
+- Delivery styles: see project brief
 - Lengths: short / medium / long × 2 takes
 - Plus short conversational reactions
 - Mono WAV, 44.1 kHz, 16-bit PCM, dry
@@ -28,11 +38,12 @@ Earlier additive-synth takes live under `audition/` for reference only (rejected
 ## Build
 
 ```bash
-python3 build_orchestral_audition.py
+python3 build_midi_audition.py
 ```
 
-Requires ffmpeg, sox, rubberband-cli, and source files under `source_samples/` (see `CREDITS.md`).
+Requires FluidSynth, MuseScore General soundfont (or `VOICE_SOUNDFONT`),
+ffmpeg, and Python mido.
 
 ## Credits
 
-University of Iowa Musical Instrument Samples — see `CREDITS.md`.
+MuseScore General soundfont (MIT) + FluidSynth — see `CREDITS.md`.

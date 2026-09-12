@@ -1,51 +1,43 @@
-# Credits — Three Colors Voice Pack (Orchestral Audition)
+# Credits — Three Colors Voice Pack
 
-## Primary sample source
+## Current audition path (MIDI / FluidSynth)
 
-**University of Iowa Musical Instrument Samples (MIS)**  
-Electronic Music Studios, University of Iowa  
-https://theremin.music.uiowa.edu/
+**Primary voice source for `audition_midi/`:** MuseScore General soundfont
+rendered with FluidSynth (expressive MIDI trombone and violin).
 
-Recordings used (downloaded 2026-09-12, stored under `source_samples/`):
+### MuseScore General (HQ / Full SF3)
 
-### Tenor trombone (anechoic chamber, 16-bit / 44.1 kHz mono)
-- `TenorTrombone.mf.C3B3.aiff`
-- `TenorTrombone.mf.C4B4.aiff`
-- `TenorTrombone.ff.C3B3.aiff`
-- `TenorTrombone.pp.C3B3.aiff`
-- `TenorTrombone.mf. E2B2.aiff`
+- File: `/usr/share/sounds/sf3/MuseScore_General_Full.sf3`
+- Debian package: `musescore-general-soundfont` (0.2.1-1)
+- Adaptation for MuseScore_General Copyright 2018-2021 S. Christian Collins
+- License: MIT (component samples PD / CC0 as documented in the Debian
+  package copyright). Includes Fluid (R3) GM heritage (Frank Wen et al., MIT).
+- See: `/usr/share/doc/musescore-general-soundfont/copyright`
 
-### Violin, arco (anechoic chamber, 16-bit / 44.1 kHz mono)
-- `Violin.arco.mf.sulG.G3B3.aiff`
-- `Violin.arco.mf.sulG.B3B4.aiff`
-- `Violin.arco.mf.sulD.D4A4.aiff`
-- `Violin.arco.pp.sulG.B3Ab4.aiff`
-- `Violin.arco.ff.sulG.G3B3.aiff`
+Programs used in the MIDI audition:
 
-These files were split into single-note grains and then time-scaled / lightly
-pitch-slid into speech-like syllable phrases. Mute color on trombone is a
-gentle resonant filter and open/muted blend applied **over** the real brass
-samples (not a sine replacement).
+- Muted Trombone — GM #59 / program change 58
+- Violin — GM #41 / program change 40
 
-### License / terms
-The University of Iowa MIS collection is freely available for research,
-education, and creative use as published by the University of Iowa Electronic
-Music Studios. Attribution to the University of Iowa Electronic Music Studios
-is requested. See https://theremin.music.uiowa.edu/ for current project notes.
+### Tools
 
-## Secondary tools (installed on build machine; not sample sources)
-- **ffmpeg** / **sox** / **rubberband-cli** — editing, spectrograms, time-stretch
-- **MuseScore General Lite SF3** and **FluidR3_GM.sf2** — available on the system
-  but **not** used as the voice source for this audition pack (real Iowa MIS
-  samples were preferred)
-- **Python**: numpy, scipy, soundfile
+- FluidSynth (`/usr/bin/fluidsynth`) — MIDI to WAV (reverb/chorus off)
+- ffmpeg / sox — mono 16-bit normalize / stats
+- Python mido — MIDI authoring (`build_midi_audition.py`)
 
-## Build script
-`build_orchestral_audition.py` — regenerates the four audition WAVs in
-`audition_orchestral/` from the grains under `source_samples/`.
+## Earlier audition path (rejected for this gate)
 
-## Audition outputs only
-1. `audition_orchestral/trombone_bureaucratic_medium_v1.wav`
-2. `audition_orchestral/trombone_dismissive_medium_v1.wav`
-3. `audition_orchestral/violin_cautious_medium_v1.wav`
-4. `audition_orchestral/violin_weary_medium_v1.wav`
+University of Iowa Musical Instrument Samples (MIS) were used for the
+grain-concat orchestral audition under `audition_orchestral/` and
+`source_samples/`. Listener feedback: still too synthetic/effect-like.
+Files retained for reference; not the source for `audition_midi/`.
+
+Iowa MIS: https://theremin.music.uiowa.edu/ — attribution requested by
+University of Iowa Electronic Music Studios.
+
+Additive-synth takes under `audition/` are also reference-only.
+
+## Build scripts
+
+- `build_midi_audition.py` → `audition_midi/` (current)
+- `build_orchestral_audition.py` → `audition_orchestral/` (prior Iowa grains)

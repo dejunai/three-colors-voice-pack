@@ -1,0 +1,53 @@
+{
+  "soundfont": "/usr/share/sounds/sf3/MuseScore_General_Full.sf3",
+  "fluidsynth": "/usr/bin/fluidsynth",
+  "gain": "0.85",
+  "reverb": false,
+  "chorus": false,
+  "clips": [
+    {
+      "file": "trombone_bureaucratic_medium_v1.wav",
+      "midi": "trombone_bureaucratic_medium_v1.mid",
+      "program": 58,
+      "program_name": "Muted Trombone (GM #59, PC 58)",
+      "tempo_bpm": 100,
+      "n_syllables": 7,
+      "midi_length_s": 2.15,
+      "duration_s": 2.06,
+      "peak_dbfs": -4.5
+    },
+    {
+      "file": "trombone_dismissive_medium_v1.wav",
+      "midi": "trombone_dismissive_medium_v1.mid",
+      "program": 58,
+      "program_name": "Muted Trombone (GM #59, PC 58)",
+      "tempo_bpm": 112,
+      "n_syllables": 10,
+      "midi_length_s": 1.98,
+      "duration_s": 1.836,
+      "peak_dbfs": -4.5
+    },
+    {
+      "file": "violin_cautious_medium_v1.wav",
+      "midi": "violin_cautious_medium_v1.mid",
+      "program": 40,
+      "program_name": "Violin (GM #41, PC 40)",
+      "tempo_bpm": 92,
+      "n_syllables": 6,
+      "midi_length_s": 2.26,
+      "duration_s": 2.168,
+      "peak_dbfs": -4.0
+    },
+    {
+      "file": "violin_weary_medium_v1.wav",
+      "midi": "violin_weary_medium_v1.mid",
+      "program": 40,
+      "program_name": "Violin (GM #41, PC 40)",
+      "tempo_bpm": 86,
+      "n_syllables": 5,
+      "midi_length_s": 2.087,
+      "duration_s": 1.915,
+      "peak_dbfs": -4.0
+    }
+  ]
+}
